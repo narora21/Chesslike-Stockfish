@@ -1,6 +1,7 @@
-# Fairy-Stockfish
+# Chesslike-Stockfish
 
 ## Overview
+This is a fork of Fairy-Stockfish to support evaluation for custom chess piecese and rules in the Chesslike project
 
 [![Build Status](https://github.com/fairy-stockfish/Fairy-Stockfish/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/fairy-stockfish/Fairy-Stockfish/actions?query=workflow%3ARelease)
 [![Build Status](https://github.com/fairy-stockfish/Fairy-Stockfish/actions/workflows/fairy.yml/badge.svg?branch=master)](https://github.com/fairy-stockfish/Fairy-Stockfish/actions?query=workflow%3Afairy)
