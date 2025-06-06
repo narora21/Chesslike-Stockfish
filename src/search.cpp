@@ -181,6 +181,7 @@ void MainThread::search() {
   {
       nodes = perft<true>(rootPos, Limits.perft);
       sync_cout << "\nNodes searched: " << nodes << "\n" << sync_endl;
+      sync_cout << "end search" << sync_endl; // Signifies end of search
       return;
   }
 
@@ -297,6 +298,7 @@ void MainThread::search() {
                   XBoard::stateMachine->ponderMove = bestThread->rootMoves[0].pv[1];
           }
       }
+      std::cout << "end search" << sync_endl; // Signifies end of search
       return;
   }
 
@@ -306,6 +308,7 @@ void MainThread::search() {
       std::cout << " ponder " << UCI::move(rootPos, bestThread->rootMoves[0].pv[1]);
 
   std::cout << sync_endl;
+  std::cout << "end search" << sync_endl; // Signifies end of search
 }
 
 

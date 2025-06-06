@@ -415,6 +415,7 @@ void UCI::loop(int argc, char* argv[]) {
       }
       else if (!token.empty() && token[0] != '#')
           sync_cout << "Unknown command: " << cmd << sync_endl;
+      sync_cout << "end cmd" << sync_endl; // Signifies end of command response
 
   } while (token != "quit" && argc == 1); // Command line args are one-shot
 }
