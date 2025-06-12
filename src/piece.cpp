@@ -193,14 +193,17 @@ void PieceMap::init(const Variant* v) {
   add(BISHOP, from_betza("B", "bishop"));
   add(ROOK, from_betza("R", "rook"));
   add(QUEEN, from_betza("Q", "queen"));
+
+  // Chesslike pieces
+  add_chesslike_pieces();
+
+  // Variant pieces
   add(FERS, from_betza("F", "fers"));
   add(ALFIL, from_betza("A", "alfil"));
   add(FERS_ALFIL, from_betza("FA", "fersAlfil"));
   add(SILVER, from_betza("FfW", "silver"));
   add(AIWOK, from_betza("RNF", "aiwok"));
   add(BERS, from_betza("RF", "bers"));
-  add(ARCHBISHOP, from_betza("BN", "archbishop"));
-  add(CHANCELLOR, from_betza("RN", "chancellor"));
   add(AMAZON, from_betza("QN", "amazon"));
   add(KNIBIS, from_betza("mNcB", "knibis"));
   add(BISKNI, from_betza("mBcN", "biskni"));
@@ -224,6 +227,7 @@ void PieceMap::init(const Variant* v) {
   add(WAZIR, from_betza("W", "wazir"));
   add(COMMONER, from_betza("K", "commoner"));
   add(CENTAUR, from_betza("KN", "centaur"));
+
   add(KING, from_betza("K", "king"));
   // Add custom pieces
   for (PieceType pt = CUSTOM_PIECES; pt <= CUSTOM_PIECES_END; ++pt)
@@ -238,6 +242,22 @@ void PieceMap::clear_all() {
   for (auto const& element : *this)
       delete element.second;
   clear();
+}
+
+void PieceMap::add_chesslike_pieces() {
+  // Knight like pieces
+  add(ELEPHANT_KNIGHT, from_betza("AN", "elephant"));
+  add(UNICORN, from_betza("fsNfNbB", "unicorn"));
+
+  // Bishop like pieces
+  add(ARCHBISHOP, from_betza("BN", "archbishop"));
+
+  // Rook like pieces
+  add(CHANCELLOR, from_betza("RN", "chancellor"));
+
+  // Queen like pieces
+  
+
 }
 
 } // namespace Stockfish

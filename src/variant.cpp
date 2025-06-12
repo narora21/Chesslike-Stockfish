@@ -50,6 +50,16 @@ namespace {
         v->nnueAlias = "nn-";
         return v;
     }
+    // Chesslike chess
+    Variant* chesslike_variant() {
+        Variant* v = chess_variant_base()->init();
+        v->add_piece(ELEPHANT_KNIGHT, 'e');
+        v->add_piece(ARCHBISHOP, 'a');
+        v->add_piece(CHANCELLOR, 'c');
+        v->add_piece(UNICORN, 'u');
+        v->startFen = "8/8/8/3a4/8/8/8/K6k w - - 0 1";
+        return v;
+    }
     // Chess960 aka Fischer random chess
     // https://en.wikipedia.org/wiki/Fischer_random_chess
     Variant* chess960_variant() {
@@ -1820,6 +1830,7 @@ void VariantMap::init() {
     // Add to UCI_Variant option
     add("chess", chess_variant());
     add("normal", chess_variant());
+    add("chesslike", chesslike_variant());
     add("fischerandom", chess960_variant());
     add("nocastle", nocastle_variant());
     add("armageddon", armageddon_variant());

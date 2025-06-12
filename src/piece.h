@@ -43,6 +43,8 @@ struct PieceMap : public std::map<PieceType, const PieceInfo*> {
   void init(const Variant* v = nullptr);
   void add(PieceType pt, const PieceInfo* v);
   void clear_all();
+  private:
+  void add_chesslike_pieces();
 };
 
 extern PieceMap pieceMap;
